@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    /* test */
     environment {
         NODE_ENV = 'production'
         EC2_USER = 'ubuntu'
