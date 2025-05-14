@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS'
+    node {
+        tool name: 'NodeJS', type: 'NodeJSInstallation'
     }
 
     environment {
