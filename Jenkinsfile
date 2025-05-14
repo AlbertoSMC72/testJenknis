@@ -27,7 +27,8 @@ pipeline {
                 sh """
                 ssh -i $SSH_KEY -o StrictHostKeyChecking=no $EC2_USER@$EC2_IP '
                     cd $REMOTE_PATH &&
-                    git pull --ff-only origin qa &&
+                    git fetch origin qa &&
+                    git reset --hard origin/qa &&
                     npm ci &&
                     pm2 restart health-api || pm2 start server.js --name health-api
                 '
